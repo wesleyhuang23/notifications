@@ -15,4 +15,20 @@ dnperm.addEventListener('click', function(e){
             }
         })
     }
+
+    //simulate an event
+    dntrigger.addEventListener('click', function(){
+        var notify;
+
+        e.preventDefault();
+
+        if(Notification.permission === 'default'){
+            alert('Please allow notifications before doing this');
+        } else {
+            notify = new Notification('New Message from Wesley', {
+                body: "Let's go play",
+                icon: 'http://barkpost-assets.s3.amazonaws.com/wp-content/uploads/2013/11/dogesmall.jpg'
+            });
+        }
+    })
 })
