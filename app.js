@@ -29,6 +29,11 @@ dnperm.addEventListener('click', function(e){
                 body: "Let's go play",
                 icon: 'http://barkpost-assets.s3.amazonaws.com/wp-content/uploads/2013/11/dogesmall.jpg'
             });
+
+            notify.onclick = function(){
+                console.log(this); //the notifiation object
+                
+            }
         }
     })
 })
