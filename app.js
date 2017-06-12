@@ -21,18 +21,22 @@ dnperm.addEventListener('click', function(e){
         var notify;
 
         e.preventDefault();
+        console.log(Notification.permission);
 
         if(Notification.permission === 'default'){
             alert('Please allow notifications before doing this');
-        } else {
+        } else if(Notification.permission === 'denied'){
+            alert('Please allow permission for notifications');
+        }   else {
             notify = new Notification('New Message from Wesley', {
-                body: "Let's go play",
+                body: "Check out my awesome website",
                 icon: 'http://barkpost-assets.s3.amazonaws.com/wp-content/uploads/2013/11/dogesmall.jpg'
             });
 
             notify.onclick = function(){
                 console.log(this); //the notifiation object
-                
+
+                window.open('https://www.fanflix.club').focus();
             }
         }
     })
